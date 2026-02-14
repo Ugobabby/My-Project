@@ -2,12 +2,14 @@ const btnE1 = document.querySelector(".btn")
 const inputE1 = document.getElementById("input")
 const copyIconE1 = document.querySelector(".fa-copy")
 const alertcontainerE1 = document.querySelector(".alert-container")
+const togglePassword = document.getElementById("togglePassword");
 
-
+// generate password
 btnE1.addEventListener("click", ()=>{
   createPassword();
 });
 
+// copy password
 copyIconE1.addEventListener("click",()=>{
   copyPassword();
   if(inputE1.value){
@@ -17,6 +19,13 @@ copyIconE1.addEventListener("click",()=>{
     }, 2000);
   }
 })
+
+// Toggle Password Visibility
+togglePassword.addEventListener("click", () => {
+  const type = inputE1.getAttribute("type") === "password" ? "text" : "password";
+  inputE1.setAttribute("type", type);
+  togglePassword.classList.toggle("fa-eye-slash");
+});
 
 function createPassword(){
   const chars = "01HFh8Jr95fqd3Z6pT1hLSD2mZnU5T6Xxyz!@#$%^&*()_-+={}[] ABCDEFGHIJKLMNOPQRSTUVWXYZ"
