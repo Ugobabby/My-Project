@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVIGATION</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            justify-content: space-between;
+        }
+        ul{
+            display: flex;
+        }
+        li{
+            display: inline;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+      
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: blue;
+            background-color: white;
+        }
+        .logo{
+            color: white;
+            font-size: 30px;
+           
+            
+            
+        }
+        .burger {
+            color: white;
+           display: none;
+        
+        }
+        .bi{
+            padding-top: 0;
+            width: auto;
+            height: 30px;
+        }
+        @media screen and (max-width: 600px) {
+            ul{
+                display: block;
+            }
+            li{
+                display: block;
+                text-align: center;
+                padding: 5px;
+                
+
+            }
+            nav{
+               
+            }
+            .burger{
+                display: block;
+               
+            
+            }
+            .logo{
+                color: white;
+                font-size: 30px;
+            }
+            .list{
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            display: none;
+          
+        }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">DAL</div>
+        <div class="list">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">TEAM</a></li>
+        </ul>
+    </div>
+    
+       <div class="burger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
+        <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+      </svg></div>
+    </nav>
+    <script>
+       var btn = document.querySelector('.burger')
+       var list= document.querySelector('.list');
+        list.style.display = 'none'
+       btn.addEventListener('click' , function() {
+        
+        if(list.style.display === 'block'){
+           list.style.display = 'none'
+           
+        }
+        else{
+           list.style.display = 'block'
+        }
+
+       })
+    </script>
+</body>
+</html
