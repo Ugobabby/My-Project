@@ -3,6 +3,7 @@ const inputE1 = document.getElementById("input")
 const copyIconE1 = document.querySelector(".fa-copy")
 const alertcontainerE1 = document.querySelector(".alert-container")
 const togglePassword = document.getElementById("togglePassword");
+const clearPassword = document.getElementById("clearPassword");
 
 // generate password
 btnE1.addEventListener("click", ()=>{
@@ -25,6 +26,18 @@ togglePassword.addEventListener("click", () => {
   const type = inputE1.getAttribute("type") === "password" ? "text" : "password";
   inputE1.setAttribute("type", type);
   togglePassword.classList.toggle("fa-eye-slash");
+});
+
+// Clear Password Function
+clearPassword.addEventListener("click", () => {
+  inputE1.value = ""; // Clear the input field
+  alertcontainerE1.innerText = "Password cleared!";
+  
+  // Show alert temporarily
+  alertcontainerE1.classList.remove("active");
+  setTimeout(() => {
+    alertcontainerE1.classList.add("active");
+  }, 2000);
 });
 
 function createPassword(){
